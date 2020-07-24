@@ -32,9 +32,9 @@ public class Bundestag{
 		
 		final PieChart chart = new PieChart(pieChartData);
 		chart.setTitle("Bundestag Sitzverteilung");
-		
-		pieChartData.get(0).getNode().setStyle("-fx-pie-color: #ffffff;");
-		pieChartData.get(1).getNode().setStyle("-fx-pie-color: #cb99c9;");
+		chart.setLegendVisible(false);
+		pieChartData.get(0).getNode().setStyle("-fx-pie-color: transparent;");
+		pieChartData.get(1).getNode().setStyle("-fx-pie-color: #D00060;");
 		pieChartData.get(2).getNode().setStyle("-fx-pie-color: #46962b;");
 		pieChartData.get(3).getNode().setStyle("-fx-pie-color: #E3000F;");
 		pieChartData.get(4).getNode().setStyle("-fx-pie-color: #ffed00;");
