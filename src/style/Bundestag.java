@@ -2,12 +2,11 @@ package style;
 
 import java.util.ArrayList;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.stage.Stage;
+import myCharts.HalfPieChart;
 
 public class Bundestag{
 
@@ -22,26 +21,21 @@ public class Bundestag{
 
 	public PieChart getPieChart() {
 
-		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("", 50),
-				new PieChart.Data("Linke", this.content.get(0)), 
-				new PieChart.Data("B90/Gruene", this.content.get(1)),
-				new PieChart.Data("SPD", this.content.get(2)), 
-				new PieChart.Data("FDP", this.content.get(3)),
-				new PieChart.Data("Union", this.content.get(4)), 
-				new PieChart.Data("AfD", this.content.get(5)));
 		
-		final PieChart chart = new PieChart(pieChartData);
-		chart.setTitle("Bundestag Sitzverteilung");
-		chart.setLegendVisible(false);
-		pieChartData.get(0).getNode().setStyle("-fx-pie-color: transparent;");
-		pieChartData.get(1).getNode().setStyle("-fx-pie-color: #D00060;");
-		pieChartData.get(2).getNode().setStyle("-fx-pie-color: #46962b;");
-		pieChartData.get(3).getNode().setStyle("-fx-pie-color: #E3000F;");
-		pieChartData.get(4).getNode().setStyle("-fx-pie-color: #ffed00;");
-		pieChartData.get(5).getNode().setStyle("-fx-pie-color: #000000;");
-		pieChartData.get(6).getNode().setStyle("-fx-pie-color: #009ee0;");
+		String[] names = {
+				"Linke", "B90/Gruene", "SPD", 
+				"FDP", "Union", "AfD"
+		};
+		String[] colors = {
+				"#D00060", "#46962b", "#E3000F",
+				"#ffed00", "#000000", "#009ee0"
+		};
+	
 		
-		return chart;
+		HalfPieChart myChart = new HalfPieChart( content, names, "Bundestag");
+		
+		myChart.changeColors(colors);
+		return myChart.toChart();
 
 	}
 	
