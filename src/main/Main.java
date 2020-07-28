@@ -16,15 +16,16 @@ public class Main extends Application {
 
 	private Button createChart = new Button("Chart erstellen");
 	private Button checkButton = new Button("Aktualisieren");
-	private ArrayList<Double> content;
+	private ArrayList<Double> content = null;
 	private ArrayList<TextField> listOfTextFields = new ArrayList<TextField>();
 	private Label remainSeats = new Label();
 	private Double remain;
 
 	private void createButtonEvent() {
-		content = new ArrayList<Double>();
+
 		createChart.setOnAction(e -> {
 
+			content = new ArrayList<Double>();
 			for (int i = 0; i < listOfTextFields.size(); i++) {
 				content.add(Double.parseDouble(listOfTextFields.get(i).getText()));
 

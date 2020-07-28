@@ -10,10 +10,11 @@ import myCharts.HalfPieChart;
 
 public class Bundestag{
 
-	private ArrayList<Double> content = new ArrayList<Double>();
+	private ArrayList<Double> content = null;
 
 	public Bundestag(ArrayList<Double> content) {
 
+		this.content = new ArrayList<Double>();
 		for (int i = 0; i < content.size(); i++) {
 			this.content.add((content.get(i) / 100) * 50);
 		}
