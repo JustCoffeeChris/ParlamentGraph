@@ -21,6 +21,8 @@ public class Main extends Application {
 	private Label remainSeats = new Label();
 	private Double remain;
 
+
+	
 	private void createButtonEvent() {
 
 		createChart.setOnAction(e -> {
